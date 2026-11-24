@@ -1,0 +1,189 @@
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TopBar = Instance.new("Frame")
+local UIGradient = Instance.new("UIGradient")
+local RainbowStroke = Instance.new("UIStroke")
+ 
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+ScreenGui.Name = "KGB_RT_ANTI_KICK"
+ 
+-- ====================== ANA ÇERÇEVE ======================
+Frame.Parent = ScreenGui
+Frame.Size = UDim2.new(0, 220, 0, 300)
+Frame.Position = UDim2.new(0.5, -110, 0.5, -150)
+Frame.BackgroundColor3 = Color3.fromRGB(110, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Draggable = true
+Frame.Active = true
+ 
+local Corner = Instance.new("UICorner")
+Corner.CornerRadius = UDim.new(0, 18)
+Corner.Parent = Frame
+ 
+-- Gradient Arka Plan
+UIGradient.Parent = Frame
+UIGradient.Color = ColorSequence.new{
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(139, 0, 0)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(70, 0, 0))
+}
+UIGradient.Rotation = 85
+ 
+-- **RAINBOW KENAR EFEKTİ**
+RainbowStroke.Parent = Frame
+RainbowStroke.Thickness = 4
+RainbowStroke.Transparency = 0.2
+ 
+-- Rainbow Animasyonu
+task.spawn(function()
+    while Frame.Parent do
+        for i = 0, 1, 0.008 do
+            RainbowStroke.Color = Color3.fromHSV(i, 1, 1)
+            task.wait(0.03)
+        end
+    end
+end)
+ 
+-- ====================== ÜST BAR ======================
+TopBar.Parent = Frame
+TopBar.Size = UDim2.new(1, 0, 0, 52)
+TopBar.BackgroundColor3 = Color3.fromRGB(45, 0, 0)
+TopBar.BorderSizePixel = 0
+ 
+local TopCorner = Instance.new("UICorner")
+TopCorner.CornerRadius = UDim.new(0, 18)
+TopCorner.Parent = TopBar
+ 
+local Title = Instance.new("TextLabel")
+Title.Parent = TopBar
+Title.Size = UDim2.new(1, -70, 1, 0)
+Title.BackgroundTransparency = 1
+Title.Text = "☭ KGB-RT ANTI KICK ☭"
+Title.Font = Enum.Font.GothamBlack
+Title.TextColor3 = Color3.fromRGB(255, 215, 0)
+Title.TextSize = 20
+Title.TextStrokeTransparency = 0.6
+ 
+local CloseBtn = Instance.new("TextButton")
+CloseBtn.Parent = TopBar
+CloseBtn.Size = UDim2.new(0, 38, 0, 38)
+CloseBtn.Position = UDim2.new(1, -45, 0.5, -19)
+CloseBtn.Text = "✕"
+CloseBtn.BackgroundColor3 = Color3.fromRGB(180, 0, 0)
+CloseBtn.TextColor3 = Color3.new(1,1,1)
+CloseBtn.Font = Enum.Font.GothamBold
+CloseBtn.TextSize = 22
+Instance.new("UICorner", CloseBtn).CornerRadius = UDim.new(1,0)
+ 
+CloseBtn.MouseButton1Click:Connect(function() Frame.Visible = false end)
+ 
+-- ====================== MOBİL BUTON ======================
+local MobileBtn = Instance.new("TextButton")
+MobileBtn.Parent = ScreenGui
+MobileBtn.Size = UDim2.new(0, 68, 0, 68)
+MobileBtn.Position = UDim2.new(0.91, 0, 0.35, 0)
+MobileBtn.BackgroundColor3 = Color3.fromRGB(139, 0, 0)
+MobileBtn.Text = "☭"
+MobileBtn.TextColor3 = Color3.new(1,1,1)
+MobileBtn.TextSize = 38
+MobileBtn.Font = Enum.Font.GothamBlack
+Instance.new("UICorner", MobileBtn).CornerRadius = UDim.new(1,0)
+ 
+local MobileStroke = Instance.new("UIStroke", MobileBtn)
+MobileStroke.Thickness = 3
+ 
+MobileBtn.MouseButton1Click:Connect(function()
+    Frame.Visible = not Frame.Visible
+end)
+ 
+-- ====================== ANTI KICK BUTONU ======================
+local AntiKickBtn = Instance.new("TextButton")
+AntiKickBtn.Parent = Frame
+AntiKickBtn.Size = UDim2.new(0, 180, 0, 75)
+AntiKickBtn.Position = UDim2.new(0.5, -90, 0, 85)
+AntiKickBtn.BackgroundColor3 = Color3.fromRGB(110, 0, 0)
+AntiKickBtn.TextColor3 = Color3.new(1,1,1)
+AntiKickBtn.Font = Enum.Font.GothamBold
+AntiKickBtn.TextSize = 21
+AntiKickBtn.Text = "ANTI KICK: OFF"
+Instance.new("UICorner", AntiKickBtn).CornerRadius = UDim.new(0, 16)
+ 
+local BtnStroke = Instance.new("UIStroke", AntiKickBtn)
+BtnStroke.Thickness = 2.5
+BtnStroke.Color = Color3.fromRGB(255, 215, 0)
+ 
+local AntiKickEnabled = false
+ 
+AntiKickBtn.MouseButton1Click:Connect(function()
+    AntiKickEnabled = not AntiKickEnabled
+    if AntiKickEnabled then
+        AntiKickBtn.Text = "ANTI KICK: ON"
+        AntiKickBtn.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
+        BtnStroke.Color = Color3.fromRGB(0, 255, 80)
+    else
+        AntiKickBtn.Text = "ANTI KICK: OFF"
+        AntiKickBtn.BackgroundColor3 = Color3.fromRGB(110, 0, 0)
+        BtnStroke.Color = Color3.fromRGB(255, 215, 0)
+    end
+end)
+ 
+-- ====================== DESTROY GUI BUTONU ======================
+local DestroyBtn = Instance.new("TextButton")
+DestroyBtn.Parent = Frame
+DestroyBtn.Size = UDim2.new(0, 180, 0, 45)
+DestroyBtn.Position = UDim2.new(0.5, -90, 1, -65)
+DestroyBtn.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+DestroyBtn.TextColor3 = Color3.new(1,1,1)
+DestroyBtn.Font = Enum.Font.GothamBold
+DestroyBtn.TextSize = 18
+DestroyBtn.Text = "🗑 DESTROY GUI"
+Instance.new("UICorner", DestroyBtn).CornerRadius = UDim.new(0, 12)
+ 
+DestroyBtn.MouseButton1Click:Connect(function()
+    ScreenGui:Destroy()
+    print("☭ KGB-RT GUI Destroyed!")
+end)
+ 
+-- ====================== GÜÇLÜ ANTI-KICK ======================
+local mt = getrawmetatable(game)
+local oldNamecall = mt.__namecall
+local oldNewIndex = mt.__newindex
+ 
+setreadonly(mt, false)
+ 
+mt.__namecall = newcclosure(function(self, ...)
+    local method = getnamecallmethod()
+    if not AntiKickEnabled then return oldNamecall(self, ...) end
+ 
+    if method == "Kick" or method == "kick" then
+        warn("☭ KGB-RT: Kick engellendi!")
+        return
+    end
+ 
+    if self.Name:lower():find("kick") or self.Name:lower():find("ban") or self.Name:lower():find("moderation") then
+        if method == "FireServer" or method == "InvokeServer" then
+            warn("☭ KGB-RT: Remote engellendi → " .. self.Name)
+            return
+        end
+    end
+    return oldNamecall(self, ...)
+end)
+ 
+mt.__newindex = newcclosure(function(self, key, value)
+    if not AntiKickEnabled then return oldNewIndex(self, key, value) end
+    if self == game.Players.LocalPlayer and key == "Parent" and value == nil then
+        return
+    end
+    return oldNewIndex(self, key, value)
+end)
+ 
+setreadonly(mt, true)
+ 
+-- ====================== YÜKLENDİ ======================
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "☭ KGB-RT",
+    Text = "Rainbow Kenar + Destroy GUI Yüklendi!",
+    Duration = 7
+})
+ 
+print("☭ KGB-RT PREMIUM RAINBOW AKTİF! ☭")

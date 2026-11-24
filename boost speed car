@@ -1,0 +1,2534 @@
+-- This file was generated at discord.gg/syncrypt
+-- Keyless patch: auth gate removed, loads directly into t2.value11()
+
+local env = getfenv and getfenv() or _ENV
+local unpack_ = unpack or table.unpack
+local t2 = {
+	value1 = game:GetService("TweenService"),
+	value2 = game:GetService("UserInputService"),
+	value3 = game:GetService("CoreGui")
+}
+local HttpService = game:GetService("HttpService")
+local _ = { t2.value1 }
+
+t2.value4 = HttpService
+
+local Players = game:GetService("Players")
+
+game:GetService("RunService")
+game:GetService("Workspace")
+
+local _ = Players.LocalPlayer
+
+t2.value5 = {
+	api = "e018b32b-3570-42b3-91dd-9e273a5923b1",
+	ownerId = "2969472",
+	vampauthProjectId = "4OU1VIA52I9J1C25",
+	vampauthAuthSecret = "cde22fb1a9c835d8ed957396694e37d78118682214ca71f4",
+	service = "DDS Script",
+	provider = "DDS PROVIDER SCRIPT",
+	discord = "https://discord.gg/42nMNED7E",
+	logo = "rbxassetid://84461987800596",
+	barColor = Color3.fromRGB(90, 170, 255),
+	keyFile = "&R4_key2.txt",
+	settingsFile = "V_boost_settings.txt"
+}
+
+local StarterGui = game:GetService("StarterGui")
+local _ = { t2.value4, t2.value5 }
+local t1 = {
+	value1 = { t2.value5 },
+	value2 = {
+		Title = "FX HUB LOADED !",
+		Text = "Made by iEelXyz | Auto-Save & Bypass Enabled !",
+		Button1 = "Continue",
+		Duration = 4
+	}
+}
+local SetCore = StarterGui.SetCore
+
+t1.value3 = { t2.value2 }
+SetCore(StarterGui, "SendNotification", t1.value2)
+t2.value6 = nil
+t2.value7 = nil
+t2.value8 = nil
+t2.value9 = {}
+
+local _ = {
+	t2.value3,
+	t2.value5,
+	t2.value4,
+	t2.value9,
+	t2.value1
+}
+
+local function v13(p1, p2, p3, p4)
+	local ScreenGui = Instance.new("ScreenGui")
+
+	ScreenGui.Name = "NotifGui"
+	ScreenGui.ResetOnSpawn = false
+	ScreenGui.DisplayOrder = 2147483647
+	ScreenGui.Parent = t2.value3
+
+	local clamp = math.clamp
+	local X = workspace.CurrentCamera.ViewportSize.X
+	local Y = workspace.CurrentCamera.ViewportSize.Y
+	local v18 = clamp(math.min(X, Y) / 1366, 0.60000000000002, 1.6)
+	local v19 = math.clamp(320 * v18, 200, 520)
+	local v20 = math.clamp(72 * v18, 54, 140)
+	local Frame = Instance.new("Frame")
+
+	Frame.Size = UDim2.new(0, v19, 0, v20)
+	Frame.Position = UDim2.new(1, -12, 1, -12 - v20 - 16)
+	Frame.AnchorPoint = Vector2.new(1, 1)
+	Frame.BackgroundTransparency = 0
+	Frame.BackgroundColor3 = Color3.fromRGB(20, 40, 70)
+	Frame.BorderSizePixel = 0
+	Frame.Parent = ScreenGui
+
+	local UICorner = Instance.new("UICorner")
+
+	UICorner.CornerRadius = UDim.new(0, 10)
+	UICorner.Parent = Frame
+
+	local Frame2 = Instance.new("Frame")
+
+	Frame2.Size = UDim2.new(1, 0, 0, 4)
+	Frame2.Position = UDim2.new(0, 0, 1, -4)
+	Frame2.BackgroundColor3 = t2.value5.barColor
+	Frame2.BorderSizePixel = 0
+	Frame2.ClipsDescendants = true
+	Frame2.Parent = Frame
+
+	local UICorner2 = Instance.new("UICorner")
+
+	UICorner2.CornerRadius = UDim.new(0, 2)
+	UICorner2.Parent = Frame2
+
+	local Frame3 = Instance.new("Frame")
+
+	Frame3.Size = UDim2.new(1, 0, 1, 0)
+	Frame3.Position = env.UDim2.new(0, 0, 0, 0)
+	Frame3.BackgroundColor3 = t2.value5.barColor
+	Frame3.BorderSizePixel = 0
+	Frame3.Parent = Frame2
+
+	local ImageLabel = Instance.new("ImageLabel")
+
+	ImageLabel.Size = env.UDim2.new(0, v20, 1, 0)
+	ImageLabel.Position = env.UDim2.new(0, 0, 0, 0)
+	ImageLabel.BackgroundTransparency = 1
+	ImageLabel.Image = p4 or t2.value5.logo
+	ImageLabel.ImageColor3 = t2.value5.barColor
+	ImageLabel.ScaleType = Enum.ScaleType.Stretch
+	ImageLabel.Parent = Frame
+
+	local TextLabel = Instance.new("TextLabel")
+
+	TextLabel.BackgroundTransparency = 1
+	TextLabel.Size = UDim2.new(1, -v20 - 8, 0.4, 0)
+	TextLabel.Position = UDim2.new(0, v20 + 8, 0, 0)
+	TextLabel.Font = Enum.Font.Code
+	TextLabel.TextSize = math.clamp(14 * v18, 12, 20)
+	TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+	TextLabel.TextYAlignment = Enum.TextYAlignment.Top
+	TextLabel.TextColor3 = Color3.new(1, 1, 1)
+	TextLabel.Text = p1
+	TextLabel.Parent = Frame
+
+	local TextLabel2 = Instance.new("TextLabel")
+
+	TextLabel2.BackgroundTransparency = 1
+	TextLabel2.Size = UDim2.new(1, -v20 - 8, 0.5, 0)
+	TextLabel2.Position = UDim2.new(0, v20 + 8, 0.4, 0)
+	TextLabel2.Font = Enum.Font.Code
+
+	local v29 = 12 * v18
+
+	TextLabel2.TextSize = math.clamp(v29, 10, 16)
+	TextLabel2.TextXAlignment = Enum.TextXAlignment.Left
+	TextLabel2.TextYAlignment = Enum.TextYAlignment.Top
+	TextLabel2.TextColor3 = Color3.fromRGB(200, 200, 200)
+	TextLabel2.Text = p2
+	TextLabel2.TextWrapped = true
+	TextLabel2.Parent = Frame
+
+	local v30 = tick() * 1000
+	local v31 = math.floor(v30)
+	local v32 = tostring(v31) .. "-" .. t2.value4:GenerateGUID(false)
+	local value9 = t2.value9
+
+	table.insert(value9, {
+		id = v32,
+		frame = Frame,
+		sizeY = v20
+	})
+
+	local function v34()
+		local n1 = 0
+		local v36 = nil
+		local v37 = nil
+
+		while true do
+			if n1 == 0 then
+				v37 = 8 * v18
+				n1 = 1
+				v36 = 0
+			end
+
+			if n1 == 1 then
+				for i = #t2.value9, 1, -1 do
+					local _ = i
+					local n2 = 0
+
+					while n2 ~= 0 do
+
+					end
+
+					local v41 = t2.value9[i]
+					local frame
+
+					if v41 then
+						frame = v41.frame
+
+						if frame then
+							frame = v41.frame.Parent
+						end
+					else
+						frame = v41
+					end
+
+					if frame then
+						local sizeY = v41.sizeY
+						local frame2 = v41.frame
+						local tweenInfoNew = TweenInfo.new
+						local Enum_ = Enum
+
+						t2.value1:Create(frame2, tweenInfoNew(0.25, Enum_.EasingStyle.Quad, Enum.EasingDirection.Out), {
+							Position = UDim2.new(1, -12, 1, -12 - v36 - sizeY)
+						}):Play()
+						v36 = v36 + v41.sizeY + v37
+					end
+				end
+
+				local _ = env["6LkZFcJaW3Mxg4"]
+
+				return
+			end
+		end
+	end
+
+	v34()
+
+	local function v48()
+		local n3 = 1
+		local v50 = #t2.value9
+		local v51 = n3 < 0
+		local v52 = 1 - n3
+
+		while true do
+			v52 = n3 + v52
+
+			local v54 = v52 <= v50
+
+			if (not v51 or v50 > v52) and (v51 or not v54) then
+				break
+			end
+
+			if t2.value9[v52].id == v32 then
+				table.remove(t2.value9, v52)
+
+				break
+			end
+		end
+
+		t2.value1:Create(Frame, TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
+			Position = UDim2.new(1, 16, Frame.Position.Y.Scale, Frame.Position.Y.Offset),
+			BackgroundTransparency = 1
+		}):Play()
+		t2.value1:Create(TextLabel, TweenInfo.new(0.34999999999991), {
+			TextTransparency = 1
+		}):Play()
+		t2.value1:Create(TextLabel2, TweenInfo.new(0.35), {
+			TextTransparency = 1
+		}):Play()
+		t2.value1:Create(ImageLabel, TweenInfo.new(0.35), {
+			ImageTransparency = 1
+		}):Play()
+		task.wait(0.35)
+
+		local function v55()
+			Frame:Destroy()
+		end
+
+		pcall(v55)
+		v34()
+	end
+
+	local v56
+
+	if p3 then
+		v56 = p3 > 0
+	else
+		v56 = p3
+	end
+
+	if not v56 then
+		v53 = Instance.new("TextButton")
+		v53.Size = UDim2.new(1, 0, 1, 0)
+		v53.BackgroundTransparency = 1
+		v53.Text = ""
+		v53.ZIndex = 10
+		v53.Parent = Frame
+		v53.MouseButton1Click:Connect(v48)
+
+		return {
+			Close = v48
+		}
+	end
+
+	t2.value1:Create(Frame3, TweenInfo.new(p3, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {
+		Size = UDim2.new(0, 0, 1, 0)
+	}):Play()
+	task.delay(p3, v48)
+
+	local TextButton = Instance.new("TextButton")
+
+	TextButton.Size = UDim2.new(1, 0, 1, 0)
+	TextButton.BackgroundTransparency = 1
+	TextButton.Text = ""
+	TextButton.ZIndex = 10
+	TextButton.Parent = Frame
+	TextButton.MouseButton1Click:Connect(v48)
+
+	return {
+		Close = v48
+	}
+end
+
+local value4 = {
+	t2.value8,
+	t2.value7,
+	v13,
+	t2.value1
+}
+local value5 = { t2.value5, t2.value6, t2.value3 }
+
+t1.value4 = value4
+t1.value5 = value5
+
+local function v59(p5)
+	if not writefile then
+		return
+	end
+
+	local function v60()
+		writefile(t2.value5.keyFile, p5)
+	end
+
+	pcall(v60)
+end
+
+function t2.value6()
+	if not readfile then
+		return ""
+	end
+
+	local function v61()
+		return readfile(t2.value5.keyFile)
+	end
+
+	local v62, v63 = env.pcall(v61)
+
+	if v62 then
+		local _ = env["59HTaM4tGhFgKz"]
+
+		return v63
+	else
+		return ""
+	end
+end
+function t2.value7(p6)
+	if not writefile then
+		return
+	end
+
+	pcall(function()
+		writefile(t2.value5.settingsFile, t2.value4:JSONEncode(p6))
+	end)
+end
+function t1.value1()
+	if not readfile then
+		return nil
+	end
+
+	local n4 = 0
+
+	while n4 ~= 0 do
+
+	end
+
+	local function v66()
+		return t2.value4:JSONDecode(unpack_({ readfile(t2.value5.settingsFile) }))
+	end
+
+	local ok, result = pcall(v66)
+
+	if ok and result then
+		return result
+	else
+		return nil
+	end
+end
+
+t2.value8 = t1.value1
+
+function t2.value10()
+	local n5 = 0
+	local color3 = nil
+	local v71 = nil
+	local ImageLabel = nil
+	local v73 = nil
+	local TextLabel = nil
+	local ImageLabel2 = nil
+	local v76 = nil
+	local TextLabel2 = nil
+
+	while true do
+		if n5 == 16 then
+			ImageLabel.BackgroundTransparency = 1
+			ImageLabel.Image = "rbxassetid://96510194465420"
+			ImageLabel.ImageColor3 = Color3.new(1, 1, 1)
+			ImageLabel.ZIndex = 22
+			ImageLabel.Active = false
+			ImageLabel.Parent = v73.GetKey
+			TextLabel2 = Instance.new("TextLabel")
+			TextLabel2.Size = UDim2.new(1, 0, 1, 0)
+			TextLabel2.Position = env.UDim2.new(0.5, 8, 0, 0)
+			TextLabel2.AnchorPoint = Vector2.new(0.5, 0)
+			n5 = 17
+		end
+
+		if n5 == 20 then
+			ImageLabel2.Image = "rbxassetid://87354736164608"
+			ImageLabel2.ImageColor3 = Color3.new(1, 1, 1)
+			ImageLabel2.ZIndex = 22
+			ImageLabel2.Active = false
+			ImageLabel2.Parent = v73.Verify
+			TextLabel = Instance.new("TextLabel")
+			TextLabel.Size = UDim2.new(1, 0, 1, 0)
+			TextLabel.Position = UDim2.new(0.5, 8, 0, 0)
+			TextLabel.AnchorPoint = Vector2.new(0.5, 0)
+			TextLabel.BackgroundTransparency = 1
+			n5 = 21
+		end
+
+		if n5 == 0 then
+			v76 = {
+				Screen = Instance.new("ScreenGui")
+			}
+			v76.Screen.Name = "&R4 Tuff"
+			v76.Screen.ZIndexBehavior = Enum.ZIndexBehavior.Global
+			v76.Screen.ResetOnSpawn = false
+			v76.Screen.IgnoreGuiInset = true
+			v76.Screen.DisplayOrder = 999999
+			n5 = 1
+			v73 = {}
+			v71 = {}
+		end
+
+		if n5 == 10 then
+			v73.Input.BackgroundColor3 = Color3.fromRGB(15, 35, 65)
+			v73.Input.BackgroundTransparency = 0.30000000000001
+			v73.Input.BorderSizePixel = 0
+			v73.Input.Parent = v76.Main
+			v73.InputStroke = Instance.new("UIStroke")
+			v73.InputStroke.Color = t2.value5.barColor
+			v73.InputStroke.Thickness = 1
+			v73.InputStroke.Transparency = 0.5
+			n5 = 11
+		end
+
+		if n5 == 9 then
+			v71.Close.ImageColor3 = Color3.fromRGB(200, 230, 255)
+			v71.Close.ScaleType = Enum.ScaleType.Fit
+			v71.Close.Parent = v71.Top
+			v73.Input = Instance.new("Frame")
+			v73.Input.Name = "Input"
+			v73.Input.Size = UDim2.new(0.90000000000009, 0, 0, 35)
+			v73.Input.Position = UDim2.new(0.5, 0, 0, 60)
+			v73.Input.AnchorPoint = env.Vector2.new(0.5, 0)
+			n5 = 10
+		end
+
+		if n5 == 12 then
+			v73.Box.AnchorPoint = Vector2.new(0.5, 0.5)
+			v73.Box.BackgroundTransparency = 1
+			v73.Box.Text = t2.value6()
+			v73.Box.TextColor3 = Color3.fromRGB(200, 230, 255)
+			v73.Box.PlaceholderText = "00000000-0000-0000-0000-000000000000"
+			v73.Box.PlaceholderColor3 = Color3.fromRGB(100, 120, 150)
+			v73.Box.TextSize = 14
+			v73.Box.Font = Enum.Font.Gotham
+			n5 = 13
+		end
+
+		if n5 == 15 then
+			v73.GetKey.BorderSizePixel = 0
+			v73.GetKey.Text = ""
+			v73.GetKey.AutoButtonColor = false
+			v73.GetKey.Parent = v73.Buttons
+			ImageLabel = Instance.new("ImageLabel")
+			ImageLabel.Size = UDim2.new(0, 16, 0, 16)
+			ImageLabel.Position = UDim2.new(0.5, -20, 0.5, 0)
+			ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+			n5 = 16
+		end
+
+		if n5 == 17 then
+			TextLabel2.BackgroundTransparency = 1
+			TextLabel2.Text = "Get Key ( LinkVertise )"
+			TextLabel2.TextColor3 = Color3.new(1, 1, 1)
+			TextLabel2.TextSize = 12
+			TextLabel2.Font = Enum.Font.GothamBold
+			TextLabel2.ZIndex = 22
+			TextLabel2.Active = false
+			TextLabel2.Parent = v73.GetKey
+			v73.GetKeyCorner = Instance.new("UICorner")
+			v73.GetKeyCorner.CornerRadius = UDim.new(0, 8)
+			n5 = 18
+		end
+
+		if n5 == 13 then
+			v73.Box.ClearTextOnFocus = false
+			v73.Box.Parent = v73.Input
+			v73.Buttons = Instance.new("Frame")
+			v73.Buttons.Name = "Buttons"
+			v73.Buttons.Size = UDim2.new(0.9, 0, 0, 30)
+			v73.Buttons.Position = UDim2.new(0.5, 0, 1, -40)
+			v73.Buttons.AnchorPoint = Vector2.new(0.5, 1)
+			v73.Buttons.BackgroundTransparency = 1
+			v73.Buttons.Active = false
+			v73.Buttons.ZIndex = 20
+			n5 = 14
+		end
+
+		if n5 == 18 then
+			v73.GetKeyCorner.Parent = v73.GetKey
+			v73.Verify = Instance.new("TextButton")
+			v73.Verify.Name = "Verify Key"
+			v73.Verify.Size = env.UDim2.new(0.45, -4, 1, 0)
+			v73.Verify.Position = UDim2.new(0.75, 0, 0, 0)
+			v73.Verify.AnchorPoint = Vector2.new(0.5, 0)
+			v73.Verify.BackgroundColor3 = color3
+			v73.Verify.BorderSizePixel = 0
+			v73.Verify.Active = true
+			v73.Verify.ZIndex = 21
+			n5 = 19
+		end
+
+		if n5 == 14 then
+			v73.Buttons.Parent = v76.Main
+			color3 = Color3.fromRGB(30, 80, 150)
+			v73.GetKey = Instance.new("TextButton")
+			v73.GetKey.Name = "GetKey"
+			v73.GetKey.Size = UDim2.new(0.45, -4, 1, 0)
+			v73.GetKey.Position = UDim2.new(0.25, 0, 0, 0)
+			v73.GetKey.AnchorPoint = Vector2.new(0.5, 0)
+			v73.GetKey.BackgroundColor3 = color3
+			v73.GetKey.Active = true
+			v73.GetKey.ZIndex = 21
+			n5 = 15
+		end
+
+		if n5 == 22 then
+			return {
+				gui = v76.Screen,
+				main = v76.Main,
+				box = v73.Box,
+				verify = v73.Verify,
+				getKey = v73.GetKey,
+				close = v71.Close,
+				top = v71.Top
+			}
+		end
+
+		if n5 == 11 then
+			v73.InputStroke.Parent = v73.Input
+			v73.InputCorner = Instance.new("UICorner")
+			v73.InputCorner.CornerRadius = UDim.new(0, 6)
+			v73.InputCorner.Parent = v73.Input
+			v73.Box = Instance.new("TextBox")
+			v73.Box.Name = "Box"
+			v73.Box.Size = UDim2.new(0.90000000000009, 0, 1, 0)
+			v73.Box.Position = UDim2.new(0.5, 0, 0.5, 0)
+			n5 = 12
+		end
+
+		if n5 == 19 then
+			v73.Verify.Text = ""
+			v73.Verify.AutoButtonColor = false
+			v73.Verify.Parent = v73.Buttons
+			ImageLabel2 = Instance.new("ImageLabel")
+			ImageLabel2.Size = UDim2.new(0, 16, 0, 16)
+			ImageLabel2.Position = UDim2.new(0.5, -20, 0.5, 0)
+			ImageLabel2.AnchorPoint = Vector2.new(0.5, 0.5)
+			ImageLabel2.BackgroundTransparency = 1
+			n5 = 20
+		end
+
+		if n5 == 8 then
+			v71.Title.Parent = v71.Top
+			v71.Close = env.Instance.new("ImageButton")
+			v71.Close.Name = "Close"
+			v71.Close.Size = UDim2.new(0, 20, 0, 20)
+			v71.Close.Position = UDim2.new(1, -10, 0.5, 0)
+			v71.Close.AnchorPoint = Vector2.new(1, 0.5)
+			v71.Close.BackgroundTransparency = 1
+			v71.Close.Image = "rbxassetid://122931434733842"
+			v71.Close.Active = true
+			v71.Close.ZIndex = 50
+			n5 = 9
+		end
+
+		if n5 == 5 then
+			v71.Line.Name = "Line"
+			v71.Line.Size = UDim2.new(1, 0, 0, 1)
+			v71.Line.Position = UDim2.new(0, 0, 1, 0)
+			v71.Line.BackgroundColor3 = Color3.fromRGB(25, 50, 90)
+			v71.Line.BorderSizePixel = 0
+			v71.Line.Parent = v71.Top
+			v71.Logo = Instance.new("ImageLabel")
+			v71.Logo.Name = "Logo"
+			n5 = 6
+		end
+
+		if n5 == 1 then
+			v76.Screen.Parent = t2.value3
+			v76.Main = Instance.new("Frame")
+			v76.Main.Name = "Main"
+			v76.Main.Size = UDim2.new(0, 370, 0, 200)
+			v76.Main.Position = UDim2.new(0.5, 0, 0.5, 0)
+			v76.Main.AnchorPoint = Vector2.new(0.5, 0.5)
+			v76.Main.BackgroundColor3 = Color3.fromRGB(20, 30, 50)
+			v76.Main.BackgroundTransparency = 0
+			n5 = 2
+		end
+
+		if n5 == 2 then
+			v76.Main.BorderSizePixel = 0
+			v76.Main.ClipsDescendants = false
+			v76.Main.Parent = v76.Screen
+			v76.Corner = Instance.new("UICorner")
+			v76.Corner.CornerRadius = UDim.new(0, 10)
+			v76.Corner.Parent = v76.Main
+			v71.Top = Instance.new("Frame")
+			v71.Top.Name = "Top"
+			n5 = 3
+		end
+
+		if n5 == 4 then
+			v71.TopCover = Instance.new("Frame")
+			v71.TopCover.Name = "TopCover"
+			v71.TopCover.Size = UDim2.new(1, 0, 0, 20)
+			v71.TopCover.Position = UDim2.new(0, 0, 1, -20)
+			v71.TopCover.BackgroundColor3 = Color3.fromRGB(30, 60, 100)
+			v71.TopCover.BorderSizePixel = 0
+			v71.TopCover.Parent = v71.Top
+			v71.Line = Instance.new("Frame")
+			n5 = 5
+		end
+
+		if n5 == 21 then
+			TextLabel.Text = "Verify"
+			TextLabel.TextColor3 = Color3.new(1, 1, 1)
+			TextLabel.TextSize = 12
+			TextLabel.Font = Enum.Font.GothamBold
+			TextLabel.ZIndex = 22
+			TextLabel.Active = false
+			TextLabel.Parent = v73.Verify
+			v73.VerifyCorner = Instance.new("UICorner")
+			v73.VerifyCorner.CornerRadius = UDim.new(0, 8)
+			v73.VerifyCorner.Parent = v73.Verify
+			n5 = 22
+		end
+
+		if n5 == 6 then
+			v71.Logo.Size = UDim2.new(0, 20, 0, 20)
+			v71.Logo.Position = UDim2.new(0, 10, 0, 7)
+			v71.Logo.BackgroundTransparency = 1
+			v71.Logo.Image = t2.value5.logo
+			v71.Logo.ImageColor3 = t2.value5.barColor
+			v71.Logo.Parent = v71.Top
+			v71.Title = Instance.new("TextLabel")
+			v71.Title.Name = "Title"
+			n5 = 7
+		end
+
+		if n5 == 3 then
+			v71.Top.Size = UDim2.new(1, 0, 0, 35)
+			v71.Top.Position = UDim2.new(0, 0, 0, 0)
+			v71.Top.BackgroundColor3 = Color3.fromRGB(30, 60, 100)
+			v71.Top.BorderSizePixel = 0
+			v71.Top.Parent = v76.Main
+			v71.TopCorner = env.Instance.new("UICorner")
+			v71.TopCorner.CornerRadius = UDim.new(0, 10)
+			v71.TopCorner.Parent = v71.Top
+			n5 = 4
+		end
+
+		if n5 == 7 then
+			v71.Title.Size = UDim2.new(0, 100, 0, 35)
+			v71.Title.Position = env.UDim2.new(0, 35, 0, 0)
+			v71.Title.BackgroundTransparency = 1
+			v71.Title.Text = "V7 FX-HUB DDS VEHICLE SPEED SCRIPT"
+			v71.Title.TextColor3 = Color3.fromRGB(200, 230, 255)
+			v71.Title.TextSize = 18
+			v71.Title.Font = Enum.Font.GothamBold
+			v71.Title.TextXAlignment = Enum.TextXAlignment.Left
+			n5 = 8
+		end
+	end
+end
+
+local function v78(p7)
+	local n6 = 0
+	local v80 = nil
+	local v81 = nil
+	local v82 = nil
+
+	while n6 ~= 1 do
+		if n6 == 0 then
+			local u83 = nil
+			local Position = nil
+			local Position2 = nil
+			local InputBegan = p7.top.InputBegan
+
+			InputBegan.Connect(InputBegan, function(p8)
+				if p8.UserInputType ~= Enum.UserInputType.MouseButton1 then
+					return
+				end
+
+				local n7 = 0
+
+				while true do
+					if n7 == 0 then
+						u83 = p8
+						Position = p8.Position
+						n7 = 1
+					end
+
+					if n7 == 1 then
+						Position2 = p7.main.Position
+						p8.Changed:Connect(function()
+							if p8.UserInputState ~= Enum.UserInputState.End then
+								return
+							end
+
+							u83 = nil
+						end)
+
+						return
+					end
+				end
+			end)
+			v82 = Position2
+			v81 = Position
+			v80 = u83
+			n6 = 1
+		end
+	end
+
+	t2.value2.InputChanged:Connect(function(input)
+		local v88
+
+		if input == v80 then
+			v88 = input.UserInputType == env.Enum.UserInputType.MouseMovement
+		else
+			v88 = false
+		end
+
+		if not v88 then
+			return
+		end
+
+		local v89 = input.Position - v81
+		local main = p7.main
+		local uDim2New = UDim2.new
+		local Scale = v82.X.Scale
+		local Offset = v82.X.Offset
+		local X = v89.X
+		local Scale2 = v82.Y.Scale
+		local Offset2 = v82.Y.Offset
+		local Y = v89.Y
+
+		main.Position = uDim2New(Scale, Offset + X, Scale2, Offset2 + Y)
+	end)
+end
+local function v98(p9)
+	local BackgroundColor3 = p9.BackgroundColor3
+	local color3New = Color3.new
+	local v101 = BackgroundColor3.R * 1.3
+	local v102 = math.min(v101, 1)
+	local v103 = BackgroundColor3.G * 1.3
+	local v104 = math.min(v103, 1)
+	local v105 = BackgroundColor3.B * 1.3
+	local t3 = {
+		BackgroundColor3 = color3New(v102, v104, (math.min(v105, 1)))
+	}
+
+	t2.value1:Create(p9, TweenInfo.new(0.15), t3):Play()
+	task.wait(0.15)
+
+	local tweenInfoNew = TweenInfo.new
+	local Back = env.Enum.EasingStyle.Back
+
+	t2.value1:Create(p9, tweenInfoNew(0.25, Back, Enum.EasingDirection.Out), {
+		BackgroundColor3 = BackgroundColor3
+	}):Play()
+end
+
+function t2.value11()
+	print("Loading Vehicle Boost System with Auto-Save & Bypass System")
+
+	local t4 = {
+		value2 = true,
+		value1 = "MAX_BOOST_FORCE"
+	}
+	local t5 = {
+		value1 = {
+			MAX_BOOST_FORCE = 300,
+			BOOST_INCREMENT = 4.99,
+			BOOST_INTERVAL = 0.039999999999964,
+			EASY_TURN = t4.value2,
+			BYPASS_REPORT = true
+		}
+	}
+	local game_ = game
+	local v112 = game_.GetService(game_, "Players")
+
+	t5.value2 = game:GetService("RunService")
+
+	local game_2 = game
+
+	t5.value3 = game_2.GetService(game_2, "Debris")
+	t5.value4 = v112.LocalPlayer
+	t5.value5 = false
+	t5.value6 = false
+	t5.value7 = nil
+	t5.value8 = nil
+	t5.value9 = nil
+	t5.value10 = nil
+	t5.value11 = false
+
+	local v114 = t2.value8()
+
+	t4.value1 = v114 and table.clone(v114) or table.clone(t5.value1)
+	t5.value12 = t4.value1
+	t4.value3 = {}
+	t5.value13 = false
+	t4.value4 = {}
+	t4.value5 = {}
+	t4.value5 = t4.value5
+	t4.value1 = "Parts"
+	t5.value14 = {
+		Parts = t4.value5,
+		Textures = t4.value4,
+		Particles = {},
+		Visuals = {},
+		Sky = t4.value3
+	}
+
+	local STRAIGHT_BOOST = t5.value12.STRAIGHT_BOOST
+	local _ = STRAIGHT_BOOST == nil
+
+	if STRAIGHT_BOOST ~= nil then
+		t4.value6 = 0
+
+		while t4.value6 ~= 0 do
+
+		end
+
+		t4.value7 = t5.value12.STRAIGHT_BOOST
+		t5.value12.EASY_TURN = not t4.value7
+		t5.value12.STRAIGHT_BOOST = nil
+	end
+
+	local function value18()
+		t2.value7(t5.value12)
+	end
+
+	local _ = { t5.value9, t5.value10, t5.value11 }
+
+	t5.value15 = nil
+	t5.value16 = nil
+	t5.value17 = nil
+
+	local value8 = { t5.value11, t5.value9, t5.value10 }
+	local value9 = {
+		t5.value7,
+		t5.value11,
+		t5.value8,
+		t5.value16,
+		t5.value5,
+		t5.value17,
+		t5.value4
+	}
+
+	t4.value8 = value8
+	t4.value9 = value9
+
+	local _ = { t5.value13, t5.value15, t5.value14 }
+
+	t5.value18 = value18
+
+	function t5.value17(p10)
+		local Model = p10:FindFirstAncestorOfClass("Model")
+		local PrimaryPart
+
+		if Model then
+			PrimaryPart = Model.PrimaryPart
+		else
+			PrimaryPart = Model
+		end
+
+		if PrimaryPart then
+			return Model.PrimaryPart
+		else
+			local v124, v125, v126 = ipairs(unpack_({ Model.GetDescendants(Model) }))
+
+			while true do
+				local v127
+
+				v126, v127 = v124(v125, v126)
+
+				if not v126 then
+					break
+				end
+
+				local isBasePart = v127:IsA("BasePart")
+
+				if isBasePart then
+					isBasePart = v127.Name:lower():find("chassis")
+				end
+
+				if isBasePart then
+					return v127
+				end
+			end
+
+			return p10
+		end
+	end
+
+	local value10 = { t5.value18 }
+	local value11 = { t5.value18 }
+
+	t4.value10 = value10
+	t4.value11 = value11
+
+	function t5.value19(p11)
+		local n8 = 0
+
+		while true do
+			if n8 == 1 then
+				if p11:FindFirstChild("SteerFloat") then
+					local n9 = 0
+
+					while n9 ~= 0 do
+
+					end
+
+					t5.value9 = p11.SteerFloat.Value
+					p11.SteerFloat.Value = 0
+				end
+
+				if p11:FindFirstChild("ThrottleFloat") then
+					t5.value10 = p11.ThrottleFloat.Value
+					n8 = 2
+				else
+					n8 = 2
+				end
+			end
+
+			if n8 == 2 then
+				break
+			end
+
+			if n8 == 0 then
+				if not p11 or t5.value11 then
+					return
+				end
+
+				t5.value11 = true
+				n8 = 1
+			end
+		end
+
+		if not p11:IsA("VehicleSeat") then
+			return
+		end
+
+		p11.Steer = 0
+	end
+
+	local function value16(p12)
+		if not (p12 and t5.value11) then
+			local _ = env.CieYnfEpzQqGiE
+
+			return
+		end
+
+		t5.value11 = false
+
+		local SteerFloat = p12:FindFirstChild("SteerFloat")
+
+		if SteerFloat then
+			SteerFloat = t5.value9
+		end
+
+		if SteerFloat then
+			p12.SteerFloat.Value = t5.value9
+		end
+
+		local ThrottleFloat = p12:FindFirstChild("ThrottleFloat")
+
+		if ThrottleFloat then
+			ThrottleFloat = t5.value10
+		end
+
+		if ThrottleFloat then
+			p12.ThrottleFloat.Value = t5.value10
+		end
+
+		if not p12:IsA("VehicleSeat") then
+			t5.value9 = nil
+			t5.value10 = nil
+
+			return
+		end
+
+		p12.Steer = 0.5
+		t5.value9 = nil
+		t5.value10 = nil
+	end
+
+	t4.value12 = { t5.value4 }
+	t5.value16 = value16
+
+	function t5.value20(p13)
+		if t5.value5 then
+			return
+		end
+
+		t5.value5 = true
+
+		local v137 = t5.value17(p13)
+
+		if not v137 then
+			return
+		end
+
+		if not t5.value12.EASY_TURN then
+			t5.value19(p13)
+		end
+
+		local ParticleEmitter = Instance.new("ParticleEmitter")
+
+		ParticleEmitter.Texture = "rbxassetid://242830270"
+		ParticleEmitter.Color = ColorSequence.new(unpack_({ Color3.new(1, 1, 1) }))
+		ParticleEmitter.Size = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.5), NumberSequenceKeypoint.new(1, 0) })
+		ParticleEmitter.Rate = 50
+		ParticleEmitter.Speed = NumberRange.new(5, 10)
+		ParticleEmitter.Lifetime = NumberRange.new(0.3)
+		ParticleEmitter.Transparency = NumberSequence.new(0.2, 1)
+		ParticleEmitter.VelocitySpread = 30
+		ParticleEmitter.Name = "BoostTrail"
+		ParticleEmitter.Parent = v137
+
+		local Heartbeat = t5.value2.Heartbeat
+
+		t5.value7 = Heartbeat.Connect(Heartbeat, function()
+			local n10 = 0
+			local Magnitude = nil
+			local AssemblyLinearVelocity = nil
+			local BodyVelocity = nil
+			local LookVector = nil
+			local v145 = nil
+
+			while true do
+				if n10 == 0 then
+					if not t5.value5 then
+						local _ = env.CVkt3asvWbGux
+
+						return
+					end
+
+					local v147 = not t5.value12.EASY_TURN
+
+					if v147 then
+						v147 = t5.value8
+
+						if v147 then
+							v147 = t5.value11
+						end
+					end
+
+					if v147 then
+						if t5.value8:FindFirstChild("SteerFloat") then
+							t5.value8.SteerFloat.Value = 0
+						end
+
+						if t5.value8:IsA("VehicleSeat") then
+							t5.value8.Steer = 0
+						end
+					end
+
+					Magnitude = v137.AssemblyLinearVelocity.Magnitude
+					n10 = 1
+				end
+
+				if n10 == 4 then
+					BodyVelocity.MaxForce = Vector3.new(1000000, 0, 1000000)
+					BodyVelocity.P = 10000
+					BodyVelocity.Parent = v137
+					n10 = 5
+				end
+
+				if n10 == 1 then
+					local SpeedLabel = t5.value4.PlayerGui:WaitForChild("BoostGui"):FindFirstChild("SpeedLabel")
+
+					if SpeedLabel then
+						local v149 = Magnitude + 0.5 + 0
+
+						SpeedLabel.Text = "Speed: " .. math.floor(v149)
+						SpeedLabel.Visible = true
+					end
+
+					AssemblyLinearVelocity = v137.AssemblyLinearVelocity
+					n10 = 2
+				end
+
+				if n10 == 3 then
+					local v150 = AssemblyLinearVelocity + LookVector * v145
+
+					BodyVelocity = Instance.new("BodyVelocity")
+					BodyVelocity.Velocity = Vector3.new(v150.X, AssemblyLinearVelocity.Y, v150.Z)
+					n10 = 4
+				end
+
+				if n10 == 5 then
+					t5.value3:AddItem(BodyVelocity, t5.value12.BOOST_INTERVAL)
+
+					return
+				end
+
+				if n10 == 2 then
+					LookVector = p13.CFrame.LookVector
+
+					local v151 = AssemblyLinearVelocity.Dot(AssemblyLinearVelocity, LookVector)
+					local BOOST_INCREMENT = t5.value12.BOOST_INCREMENT
+					local v153 = t5.value12.MAX_BOOST_FORCE - v151
+
+					v145 = math.min(BOOST_INCREMENT, v153)
+					n10 = 3
+				end
+			end
+		end)
+	end
+
+	local function v154()
+		local n11 = 0
+		local BoostGui = nil
+
+		while true do
+			if n11 == 1 then
+				t5.value7 = nil
+
+				local value112 = t5.value11
+
+				if value112 then
+					value112 = t5.value8
+				end
+
+				if value112 then
+					t5.value16(t5.value8)
+					n11 = 2
+				else
+					n11 = 2
+				end
+			end
+
+			if n11 == 0 then
+				t5.value5 = false
+
+				if t5.value7 then
+					t5.value7:Disconnect()
+					n11 = 1
+				else
+					n11 = 1
+				end
+			end
+
+			if n11 == 3 then
+				break
+			end
+
+			if n11 == 2 then
+				if t5.value8 then
+					local n12 = 0
+
+					while n12 ~= 0 do
+
+					end
+
+					local v159 = t5.value17(t5.value8)
+
+					if v159 then
+						local BoostTrail = v159:FindFirstChild("BoostTrail")
+
+						if BoostTrail then
+							BoostTrail:Destroy()
+						end
+
+						local BoostSound = v159:FindFirstChild("BoostSound")
+
+						if BoostSound then
+							local n13 = 0
+
+							while n13 ~= 0 do
+
+							end
+
+							BoostSound:Stop()
+							BoostSound:Destroy()
+						end
+					end
+				end
+
+				BoostGui = t5.value4.PlayerGui:FindFirstChild("BoostGui")
+
+				if BoostGui then
+					BoostGui = t5.value4.PlayerGui.BoostGui:FindFirstChild("SpeedLabel")
+				end
+
+				n11 = 3
+			end
+		end
+
+		if not BoostGui then
+			return
+		end
+
+		BoostGui.Visible = false
+	end
+
+	function t5.value21(p14, p15, p16, p17, p18)
+		local Frame = Instance.new("Frame")
+
+		Frame.Size = UDim2.new(1, -20, 0, 50)
+		Frame.BackgroundTransparency = 1
+		Frame.LayoutOrder = 1
+
+		local TextLabel = Instance.new("TextLabel")
+
+		TextLabel.Size = UDim2.new(1, 0, 0.5, 0)
+		TextLabel.BackgroundTransparency = 1
+		TextLabel.Text = p14 .. ": " .. tostring(p17)
+		TextLabel.TextColor3 = Color3.new(1, 1, 1)
+		TextLabel.Font = Enum.Font.Gotham
+		TextLabel.TextScaled = true
+		TextLabel.Parent = Frame
+
+		local TextButton = Instance.new("TextButton")
+
+		TextButton.Size = env.UDim2.new(1, 0, 0.4, 0)
+		TextButton.Position = UDim2.new(0, 0, 0.6, 0)
+		TextButton.BackgroundColor3 = env.Color3.fromRGB(30, 30, 30)
+		TextButton.Text = ""
+		TextButton.AutoButtonColor = false
+		TextButton.Parent = Frame
+
+		local UICorner = Instance.new("UICorner")
+
+		UICorner.CornerRadius = UDim.new(1, 0)
+		UICorner.Parent = TextButton
+
+		local Frame2 = Instance.new("Frame")
+
+		Frame2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Frame2.Size = UDim2.new((p17 - p15) / (p16 - p15), 0, 1, 0)
+		Frame2.BorderSizePixel = 0
+		Frame2.Parent = TextButton
+
+		local UICorner2 = Instance.new("UICorner")
+
+		UICorner2.CornerRadius = UDim.new(1, 0)
+		UICorner2.Parent = Frame2
+
+		local u169 = false
+
+		local function v170(p19)
+			local n14 = 0
+			local v172 = nil
+			local v173 = nil
+
+			while true do
+				local _ = n14 == 0 and 15525279 or false
+
+				if n14 == 0 then
+					local clamp = math.clamp
+					local X = p19.Position.X
+					local X2 = TextButton.AbsolutePosition.X
+					local X3 = TextButton.AbsoluteSize.X
+
+					v172 = clamp((X - X2) / X3, 0, 1)
+					Frame2.Size = UDim2.new(v172, 0, 1, 0)
+					n14 = 1
+				end
+
+				if n14 == 1 then
+					local v179 = p15 + (p16 - p15) * v172
+
+					v173 = tonumber(unpack_({ string.format("%.2f", v179) }))
+					n14 = 2
+				end
+
+				if n14 == 2 then
+					TextLabel.Text = p14 .. ": " .. v173
+					p18(v173)
+
+					return
+				end
+			end
+		end
+
+		TextButton.InputBegan:Connect(function(input)
+			if not (input.UserInputType == Enum.UserInputType.MouseButton1 and true or input.UserInputType == Enum.UserInputType.Touch) then
+				return
+			end
+
+			u169 = true
+			v170(input)
+		end)
+		TextButton.InputEnded:Connect(function(input)
+			if not (input.UserInputType == Enum.UserInputType.MouseButton1 and true or input.UserInputType == Enum.UserInputType.Touch) then
+				return
+			end
+
+			u169 = false
+			t5.value18()
+		end)
+
+		local InputChanged = TextButton.InputChanged
+
+		InputChanged.Connect(InputChanged, function(p20)
+			if not u169 then
+				return
+			end
+
+			v170(p20)
+		end)
+
+		return unpack_({ Frame })
+	end
+
+	local function v181(p21, p22, p23)
+		local n15 = 0
+		local TextLabel = nil
+		local TextButton = nil
+		local Frame = nil
+		local UICorner = nil
+
+		while true do
+			if n15 == 2 then
+				TextLabel.BackgroundTransparency = 1
+				TextLabel.Text = p21
+				TextLabel.TextColor3 = Color3.new(1, 1, 1)
+				n15 = 3
+			end
+
+			local _ = n15 == 0 and 8769936 or false
+
+			if n15 == 0 then
+				Frame = Instance.new("Frame")
+				Frame.Size = UDim2.new(1, -20, 0, 40)
+				Frame.BackgroundTransparency = 1
+				n15 = 1
+			end
+
+			if n15 == 6 then
+				TextButton.TextColor3 = Color3.new(1, 1, 1)
+				TextButton.TextScaled = true
+				TextButton.Font = Enum.Font.GothamBold
+				n15 = 7
+			end
+
+			if n15 == 1 then
+				Frame.LayoutOrder = 0
+				TextLabel = Instance.new("TextLabel")
+				TextLabel.Size = env.UDim2.new(0.7, 0, 1, 0)
+				n15 = 2
+			end
+
+			if n15 == 7 then
+				TextButton.Parent = Frame
+				UICorner = Instance.new("UICorner")
+				UICorner.CornerRadius = UDim.new(0.5, 0)
+				n15 = 8
+			end
+
+			if n15 == 5 then
+				TextButton.Position = UDim2.new(0.75, 0, 0.15, 0)
+				TextButton.BackgroundColor3 = p22 and Color3.fromRGB(0, 255, 0) or Color3.fromRGB(255, 0, 0)
+				TextButton.Text = p22 and "ON" or "OFF"
+				n15 = 6
+			end
+
+			if n15 == 4 then
+				TextLabel.Parent = Frame
+				TextButton = Instance.new("TextButton")
+				TextButton.Size = UDim2.new(0.25, 0, 0.7, 0)
+				n15 = 5
+			end
+
+			if n15 == 3 then
+				TextLabel.Font = Enum.Font.GothamBold
+				TextLabel.TextScaled = true
+				TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+				n15 = 4
+			end
+
+			if n15 == 8 then
+				UICorner.Parent = TextButton
+
+				local MouseButton1Click = TextButton.MouseButton1Click
+				local _ = {
+					p22,
+					p23,
+					t5.value18,
+					TextButton
+				}
+
+				MouseButton1Click:Connect(function()
+					local n16 = 0
+					local v191 = nil
+
+					while true do
+						local _ = n16 == 0 and 8034091 or false
+
+						if n16 == 0 then
+							n16 = 1
+							v191 = not p22
+							p22 = v191
+						end
+
+						if n16 == 2 then
+							p23(v191)
+							t5.value18()
+
+							return
+						end
+
+						if n16 == 1 then
+							TextButton.BackgroundColor3 = v191 and Color3.fromRGB(0, 255, 0) or Color3.fromRGB(255, 0, 0)
+							TextButton.Text = v191 and "ON" or "OFF"
+							n16 = 2
+						end
+					end
+				end)
+
+				return unpack_({ Frame })
+			end
+		end
+	end
+
+	t5.value22 = nil
+
+	function t5.value15(p24)
+		if not p24 then
+			return true
+		end
+
+		local Character = t5.value4.Character
+		local v194, v195, v196, v197, v198, Material, Asphalt, v201, Model
+
+		if Character then
+		elseif Character then
+			return true
+		else
+			v194 = p24.Name:lower()
+			v195, v196, v197 = ipairs({
+				"road",
+				"asphalt",
+				"street",
+				"highway",
+				"pavement",
+				"track",
+				"ground",
+				"floor",
+				"bridge",
+				"ramp"
+			})
+
+			while true do
+				v197, v198 = v195(v196, v197)
+
+				if not v197 then
+					break
+				end
+
+				if v194:find(v198, 1, true) then
+					return true
+				end
+			end
+
+			if p24:IsA("BasePart") then
+				Material = p24.Material
+				Asphalt = Enum.Material.Asphalt
+				v201 = Material == Asphalt and 15916683 or false
+
+				if Material == Asphalt then
+					return true
+				elseif p24.CanCollide then
+					return true
+				else
+					Model = p24:FindFirstAncestorOfClass("Model")
+
+					return (Model and Model:FindFirstChildWhichIsA("VehicleSeat", true) or Model:FindFirstChildWhichIsA("Humanoid", true)) and true or false
+				end
+			else
+				Model = p24:FindFirstAncestorOfClass("Model")
+
+				return (Model and Model:FindFirstChildWhichIsA("VehicleSeat", true) or Model:FindFirstChildWhichIsA("Humanoid", true)) and true or false
+			end
+		end
+
+		Character = p24:IsDescendantOf(t5.value4.Character)
+
+		if Character then
+			return true
+		else
+			v194 = p24.Name:lower()
+			v195, v196, v197 = ipairs({
+				"road",
+				"asphalt",
+				"street",
+				"highway",
+				"pavement",
+				"track",
+				"ground",
+				"floor",
+				"bridge",
+				"ramp"
+			})
+
+			while true do
+				v197, v198 = v195(v196, v197)
+
+				if not v197 then
+					break
+				end
+
+				if v194:find(v198, 1, true) then
+					return true
+				end
+			end
+
+			if p24:IsA("BasePart") then
+				Material = p24.Material
+				Asphalt = Enum.Material.Asphalt
+				v201 = Material == Asphalt and 15916683 or false
+
+				if Material == Asphalt then
+					return true
+				elseif p24.CanCollide then
+					return true
+				else
+					Model = p24:FindFirstAncestorOfClass("Model")
+
+					return (Model and Model:FindFirstChildWhichIsA("VehicleSeat", true) or Model:FindFirstChildWhichIsA("Humanoid", true)) and true or false
+				end
+			else
+				Model = p24:FindFirstAncestorOfClass("Model")
+
+				return (Model and Model:FindFirstChildWhichIsA("VehicleSeat", true) or Model:FindFirstChildWhichIsA("Humanoid", true)) and true or false
+			end
+		end
+	end
+
+	local function v203(p25)
+		if not t5.value13 or (not p25 or t5.value15(p25)) then
+			return
+		end
+
+		if p25:IsA("BasePart") then
+			if t5.value14.Parts[p25] then
+				p25.Material = Enum.Material.SmoothPlastic
+				p25.CastShadow = false
+
+				return
+			end
+
+			t5.value14.Parts[p25] = {
+				Material = p25.Material,
+				CastShadow = p25.CastShadow
+			}
+			p25.Material = Enum.Material.SmoothPlastic
+			p25.CastShadow = false
+		elseif p25:IsA("Texture") or p25:IsA("Decal") then
+			if t5.value14.Textures[p25] then
+				p25.Transparency = 1
+
+				return
+			end
+
+			t5.value14.Textures[p25] = p25.Transparency
+			p25.Transparency = 1
+
+			return
+		elseif p25:IsA("ParticleEmitter") or (p25:IsA("Smoke") or p25:IsA("Fire") or (p25:IsA("Sparkles") or (p25:IsA("Beam") or p25:IsA("Trail")))) then
+			if t5.value14.Particles[p25] then
+				p25.Enabled = false
+
+				return
+			end
+
+			t5.value14.Particles[p25] = p25.Enabled
+			p25.Enabled = false
+
+			return
+		else
+			if not (p25:IsA("BloomEffect") or (p25:IsA("BlurEffect") or p25:IsA("DepthOfFieldEffect") or (p25:IsA("SunRaysEffect") or p25:IsA("ColorCorrectionEffect") or (p25:IsA("PointLight") or (p25:IsA("SpotLight") or p25:IsA("SurfaceLight")))))) then
+				return
+			end
+
+			if not t5.value14.Visuals[p25] then
+				t5.value14.Visuals[p25] = p25.Enabled
+			end
+
+			p25.Enabled = false
+
+			return
+		end
+	end
+	local function v204()
+		if t5.value13 then
+			return
+		end
+
+		t5.value13 = true
+		task.spawn(function()
+			local descendants = workspace:GetDescendants()
+			local v206, v207, v208 = ipairs(descendants)
+			local v209
+
+			while true do
+				local v210
+
+				v208, v210 = v206(v207, v208)
+
+				if not v208 then
+					break
+				end
+
+				local _ = not t5.value13 and 3870124
+
+				if not t5.value13 then
+					v222, v223, v224 = ipairs(game:GetService("Lighting"):GetDescendants())
+
+					while true do
+						v224, v209 = v222(v223, v224)
+
+						if not (v224 and t5.value13) then
+							break
+						end
+
+						v203(v209)
+					end
+
+					return
+				end
+
+				v203(v210)
+
+				local _ = v208 % 150
+
+				if v208 % 150 == 0 then
+					task.wait()
+				end
+			end
+
+			local v213, v214, v215 = ipairs(game:GetService("Lighting"):GetDescendants())
+
+			while true do
+				v215, v209 = v213(v214, v215)
+
+				if not (v215 and t5.value13) then
+					break
+				end
+
+				v203(v209)
+			end
+		end)
+		t5.value22 = workspace.DescendantAdded:Connect(function(descendant)
+			task.defer(function()
+				local value13 = t5.value13
+
+				if value13 then
+					value13 = descendant.Parent
+				end
+
+				if not value13 then
+					return
+				end
+
+				v203(descendant)
+			end)
+		end)
+		v13("Reduce Lag", "Dynamic Reduce Lag ENABLED (roads and vehicles protected)", 3)
+	end
+
+	function t5.value23()
+		if not t5.value13 then
+			return
+		end
+
+		t5.value13 = false
+
+		local v217, Parent, v219, Parent2, v221, Parent3, v225, Parent4
+
+		if not t5.value22 then
+			v236, v237, v238 = pairs(t5.value14.Parts)
+
+			while true do
+				v238, v217 = v236(v237, v238)
+
+				if not v238 then
+					break
+				end
+
+				if v238 then
+					Parent = v238.Parent
+				else
+					Parent = v238
+				end
+
+				if Parent then
+					v238.Material = v217.Material
+					v238.CastShadow = v217.CastShadow
+				end
+			end
+
+			v239, v240, v241 = pairs(t5.value14.Textures)
+
+			while true do
+				v241, v219 = v239(v240, v241)
+
+				if not v241 then
+					break
+				end
+
+				if v241 then
+					Parent2 = v241.Parent
+				else
+					Parent2 = v241
+				end
+
+				if Parent2 then
+					v241.Transparency = v219
+				end
+			end
+
+			v242, v243, v244 = pairs(t5.value14.Particles)
+
+			while true do
+				v244, v221 = v242(v243, v244)
+
+				if not v244 then
+					break
+				end
+
+				if v244 then
+					Parent3 = v244.Parent
+				else
+					Parent3 = v244
+				end
+
+				if Parent3 then
+					v244.Enabled = v221
+				end
+			end
+
+			v245, v246, v247 = pairs(t5.value14.Visuals)
+
+			while true do
+				v247, v225 = v245(v246, v247)
+
+				if not v247 then
+					break
+				end
+
+				if v247 then
+					Parent4 = v247.Parent
+				else
+					Parent4 = v247
+				end
+
+				if Parent4 then
+					v247.Enabled = v225
+				end
+			end
+
+			t5.value14 = {
+				Parts = {},
+				Textures = {},
+				Particles = {},
+				Visuals = {},
+				Sky = {}
+			}
+			v13("Reduce Lag", "Dynamic Reduce Lag DISABLED", 2)
+
+			return
+		end
+
+		t5.value22:Disconnect()
+		t5.value22 = nil
+
+		local v226, v227, v228 = pairs(t5.value14.Parts)
+
+		while true do
+			v228, v217 = v226(v227, v228)
+
+			if not v228 then
+				break
+			end
+
+			if v228 then
+				Parent = v228.Parent
+			else
+				Parent = v228
+			end
+
+			if Parent then
+				v228.Material = v217.Material
+				v228.CastShadow = v217.CastShadow
+			end
+		end
+
+		local v229, v230, v231 = pairs(t5.value14.Textures)
+
+		while true do
+			v231, v219 = v229(v230, v231)
+
+			if not v231 then
+				break
+			end
+
+			if v231 then
+				Parent2 = v231.Parent
+			else
+				Parent2 = v231
+			end
+
+			if Parent2 then
+				v231.Transparency = v219
+			end
+		end
+
+		local v232, v233, v234 = pairs(t5.value14.Particles)
+
+		while true do
+			v234, v221 = v232(v233, v234)
+
+			if not v234 then
+				break
+			end
+
+			if v234 then
+				Parent3 = v234.Parent
+			else
+				Parent3 = v234
+			end
+
+			if Parent3 then
+				v234.Enabled = v221
+			end
+		end
+
+		local v235, v248, v249 = pairs(t5.value14.Visuals)
+
+		while true do
+			v249, v225 = v235(v248, v249)
+
+			if not v249 then
+				break
+			end
+
+			if v249 then
+				Parent4 = v249.Parent
+			else
+				Parent4 = v249
+			end
+
+			if Parent4 then
+				v249.Enabled = v225
+			end
+		end
+
+		t5.value14 = {
+			Parts = {},
+			Textures = {},
+			Particles = {},
+			Visuals = {},
+			Sky = {}
+		}
+		v13("Reduce Lag", "Dynamic Reduce Lag DISABLED", 2)
+	end
+
+	local function v250()
+		local ScreenGui = Instance.new("ScreenGui")
+
+		ScreenGui.Name = "BoostGui"
+		ScreenGui.IgnoreGuiInset = true
+		ScreenGui.ResetOnSpawn = false
+		ScreenGui.Parent = t5.value4:WaitForChild("PlayerGui")
+
+		local t6 = {
+			value1 = Instance.new("TextButton")
+		}
+
+		t6.value1.Name = "BoostButton"
+		t6.value1.Size = UDim2.new(0, 90, 0, 90)
+
+		local UDim2_ = UDim2
+
+		t6.value1.Position = UDim2_.new(0.5, 10, 1, -120)
+		t6.value1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		t6.value1.Text = "B"
+		t6.value1.TextColor3 = Color3.new(1, 1, 1)
+		t6.value1.TextScaled = true
+		t6.value1.Font = Enum.Font.GothamBold
+		t6.value1.Visible = false
+		t6.value1.Parent = ScreenGui
+		Instance.new("UICorner", t6.value1).CornerRadius = UDim.new(1, 0)
+		t6.value2 = Instance.new("TextButton")
+		t6.value2.Name = "SettingsButton"
+		t6.value2.Size = UDim2.new(0, 90, 0, 90)
+		t6.value2.Position = UDim2.new(0.5, -100, 1, -120)
+		t6.value2.BackgroundColor3 = env.Color3.fromRGB(0, 0, 0)
+		t6.value2.Text = "S"
+		t6.value2.TextColor3 = Color3.new(1, 1, 1)
+		t6.value2.TextScaled = true
+		t6.value2.Font = Enum.Font.GothamBold
+		t6.value2.Visible = false
+		t6.value2.Parent = ScreenGui
+		t6.value3 = Instance.new("TextButton")
+		t6.value3.Name = "LockButton"
+		t6.value3.Size = UDim2.new(0, 70, 0, 70)
+
+		local value3 = t6.value3
+		local uDim2New = UDim2.new
+		local Scale = t6.value2.Position.X.Scale
+		local Offset = t6.value2.Position.X.Offset
+		local Scale2 = t6.value2.Position.Y.Scale
+		local Offset2 = t6.value2.Position.Y.Offset
+
+		value3.Position = uDim2New(Scale, Offset + 10, Scale2, Offset2 - 80)
+		t6.value3.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+		t6.value3.Text = "🔓"
+		t6.value3.TextColor3 = Color3.new(1, 1, 1)
+		t6.value3.TextScaled = true
+		t6.value3.Font = Enum.Font.GothamBold
+		t6.value3.Visible = false
+		t6.value3.Parent = ScreenGui
+		Instance.new("UICorner", t6.value3).CornerRadius = UDim.new(1, 0)
+		Instance.new("UICorner", t6.value2).CornerRadius = UDim.new(1, 0)
+
+		local TextLabel = Instance.new("TextLabel")
+
+		TextLabel.Name = "SpeedLabel"
+		TextLabel.Size = UDim2.new(0, 120, 0, 40)
+		TextLabel.Position = env.UDim2.new(0.5, -60, 1, -170)
+		TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		TextLabel.TextColor3 = env.Color3.new(1, 1, 1)
+		TextLabel.BackgroundTransparency = 0.29999999999995
+		TextLabel.TextScaled = true
+		TextLabel.Font = Enum.Font.GothamBold
+		TextLabel.Text = "Speed: 0"
+		TextLabel.Visible = false
+		TextLabel.Parent = ScreenGui
+		Instance.new("UICorner", TextLabel).CornerRadius = UDim.new(0.2, 0)
+		t6.value4 = Instance.new("Frame")
+		t6.value4.Name = "SettingsPanel"
+		t6.value4.Size = UDim2.new(0, 280, 0, 350)
+		t6.value4.Position = env.UDim2.new(0.5, -140, 0.5, -175)
+		t6.value4.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+		t6.value4.Visible = false
+		t6.value4.Parent = ScreenGui
+		Instance.new("UICorner", t6.value4).CornerRadius = UDim.new(0.1, 0)
+
+		local TextLabel2 = Instance.new("TextLabel")
+
+		TextLabel2.Name = "PanelTitle"
+		TextLabel2.Size = UDim2.new(1, 0, 0, 40)
+		TextLabel2.BackgroundTransparency = 1
+		TextLabel2.Text = "BOOST SETTINGS"
+		TextLabel2.TextColor3 = Color3.new(1, 1, 1)
+		TextLabel2.TextScaled = true
+		TextLabel2.Font = Enum.Font.GothamBold
+		TextLabel2.Parent = t6.value4
+		t6.value5 = Instance.new("ScrollingFrame")
+		t6.value5.Size = UDim2.new(1, -10, 1, -50)
+		t6.value5.Position = UDim2.new(0, 5, 0, 40)
+		t6.value5.BackgroundTransparency = 1
+		t6.value5.BorderSizePixel = 0
+		t6.value5.ScrollBarThickness = 6
+		t6.value5.ScrollBarImageColor3 = Color3.fromRGB(100, 100, 100)
+		t6.value5.CanvasSize = UDim2.new(0, 0, 0, 0)
+		t6.value5.AutomaticCanvasSize = Enum.AutomaticSize.Y
+		t6.value5.Parent = t6.value4
+
+		local UIListLayout = Instance.new("UIListLayout")
+
+		UIListLayout.Padding = UDim.new(0, 10)
+		UIListLayout.FillDirection = Enum.FillDirection.Vertical
+		UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+		UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Top
+		UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+		UIListLayout.Parent = t6.value5
+
+		local TextButton = Instance.new("TextButton")
+
+		TextButton.Name = "ResetButton"
+		TextButton.Size = UDim2.new(1, -20, 0, 40)
+		TextButton.BackgroundColor3 = Color3.fromRGB(255, 50, 50)
+		TextButton.Text = "RESET TO DEFAULTS"
+		TextButton.TextColor3 = Color3.new(1, 1, 1)
+		TextButton.TextScaled = true
+		TextButton.Font = Enum.Font.GothamBold
+		TextButton.LayoutOrder = 0
+		TextButton.Parent = t6.value5
+		Instance.new("UICorner", TextButton).CornerRadius = UDim.new(0.5, 0)
+
+		local function v251(p26)
+			if p26 then
+				v204()
+			else
+				t5.value23()
+			end
+		end
+
+		t6.value6 = { v181("Easy Turn/Steering", t5.value12.EASY_TURN, function(p27)
+				t5.value12.EASY_TURN = p27
+
+				local value52 = t5.value5
+
+				if value52 then
+					value52 = t5.value8
+				end
+
+				if not value52 then
+					return
+				end
+
+				if p27 then
+					t5.value16(t5.value8)
+
+					return
+				end
+
+				t5.value19(t5.value8)
+			end), v181("Bypass Report", t5.value12.BYPASS_REPORT, function(p28)
+				t5.value12.BYPASS_REPORT = p28
+			end), v181("Reduce Lag", false, v251) }
+
+		local MAX_BOOST_FORCE = t5.value12.MAX_BOOST_FORCE
+
+		local function v254(p29)
+			t5.value12.MAX_BOOST_FORCE = p29
+		end
+
+		local v255 = t5.value21("Max Force", 10, 1000, MAX_BOOST_FORCE, v254)
+		local BOOST_INCREMENT = t5.value12.BOOST_INCREMENT
+
+		local function v257(p30)
+			t5.value12.BOOST_INCREMENT = p30
+		end
+
+		local Increment = t5.value21("Increment", 1, 35, BOOST_INCREMENT, v257)
+		local BOOST_INTERVAL = t5.value12.BOOST_INTERVAL
+		local _ = { t5.value12 }
+
+		local function v261(p31)
+			t5.value12.BOOST_INTERVAL = p31
+		end
+
+		t6.value7 = { v255, Increment, t5.value21("Interval", 0.0029999999999291, 1, BOOST_INTERVAL, v261) }
+
+		local v262, v263, v264 = ipairs(t6.value6)
+
+		while true do
+			local v265, v266 = v262(v263, v264)
+
+			if not v265 then
+				break
+			end
+
+			v264 = v265
+
+			local n17 = 0
+
+			while n17 ~= 0 do
+
+			end
+
+			v266.LayoutOrder = v265
+			v266.Parent = t6.value5
+		end
+
+		local v268, v269, v270 = ipairs(t6.value7)
+
+		while true do
+			local v271
+
+			v270, v271 = v268(v269, v270)
+
+			if not v270 then
+				break
+			end
+
+			v271.LayoutOrder = #t6.value6 + v270 + 1
+			v271.Parent = t6.value5
+		end
+
+		local UserInputService = game:GetService("UserInputService")
+
+		t6.value8 = nil
+		t6.value9 = nil
+		t6.value10 = nil
+		t6.value11 = 0.25
+
+		local function v273(p32)
+			local Position = p32.Position
+			local UDim2_2 = UDim2
+			local v276 = Position - t6.value9
+			local uDim2New2 = UDim2_2.new
+			local Scale3 = t6.value10.X.Scale
+			local Offset3 = t6.value10.X.Offset
+			local X = v276.X
+			local Scale4 = t6.value10.Y.Scale
+			local Offset4 = t6.value10.Y.Offset
+			local Y = v276.Y
+			local t7 = {
+				Position = uDim2New2(Scale3, Offset3 + X, Scale4, Offset4 + Y)
+			}
+
+			t2.value1:Create(t6.value4, env.TweenInfo.new(t6.value11), t7):Play()
+		end
+
+		TextLabel2.InputBegan:Connect(function(input)
+			if not (input.UserInputType == Enum.UserInputType.MouseButton1 and true or input.UserInputType == Enum.UserInputType.Touch) then
+				return
+			end
+
+			local n18 = 0
+
+			while true do
+				if n18 == 0 then
+					t6.value8 = true
+					t6.value9 = input.Position
+					n18 = 1
+				end
+
+				if n18 == 1 then
+					t6.value10 = t6.value4.Position
+					input.Changed:Connect(function()
+						local UserInputState = input.UserInputState
+						local End = Enum.UserInputState.End
+						local _ = UserInputState == End
+
+						if UserInputState ~= End then
+							return
+						end
+
+						t6.value8 = false
+					end)
+
+					return
+				end
+			end
+		end)
+
+		local function v289(input)
+			if not ((input.UserInputType == Enum.UserInputType.MouseMovement and true or input.UserInputType == Enum.UserInputType.Touch) and t6.value8) then
+				v306 = env.WliA9dPOxSqrQ
+
+				return
+			end
+
+			v273(input)
+
+			local WliA9dPOxSqrQ = env.WliA9dPOxSqrQ
+		end
+
+		UserInputService.InputChanged:Connect(v289)
+
+		local function v291()
+			t5.value12 = table.clone(t5.value1)
+			t5.value18()
+
+			local v292, v293, v294 = ipairs(t6.value5:GetChildren())
+
+			while true do
+				local v295
+
+				v294, v295 = v292(v293, v294)
+
+				if not v294 then
+					break
+				end
+
+				if v295:IsA("Frame") then
+					v295:Destroy()
+				end
+			end
+
+			local t8 = { v181("Bypass Report", t5.value12.BYPASS_REPORT, function(p33)
+					t5.value12.BYPASS_REPORT = p33
+				end) }
+
+			t6.value6 = { v181("Easy Turn/Steering", t5.value12.EASY_TURN, function(p34)
+					t5.value12.EASY_TURN = p34
+
+					local value52 = t5.value5
+
+					if value52 then
+						value52 = t5.value8
+					end
+
+					if not value52 then
+						return
+					end
+
+					if p34 then
+						t5.value16(t5.value8)
+
+						return
+					end
+
+					if not t5.value5 then
+						return
+					end
+
+					t5.value19(t5.value8)
+				end), unpack_(t8) }
+
+			local MAX_BOOST_FORCE2 = t5.value12.MAX_BOOST_FORCE
+
+			local function v299(p35)
+				t5.value12.MAX_BOOST_FORCE = p35
+			end
+
+			local v300 = t5.value21("Max Force", 10, 1000, MAX_BOOST_FORCE2, v299)
+			local BOOST_INCREMENT2 = t5.value12.BOOST_INCREMENT
+
+			local function v302(p36)
+				t5.value12.BOOST_INCREMENT = p36
+			end
+
+			local Increment2 = t5.value21("Increment", 1, 35, BOOST_INCREMENT2, v302)
+			local BOOST_INTERVAL2 = t5.value12.BOOST_INTERVAL
+
+			local function v305(p37)
+				t5.value12.BOOST_INTERVAL = p37
+			end
+
+			t6.value7 = { v300, Increment2, t5.value21("Interval", 0.003, 1, BOOST_INTERVAL2, v305) }
+
+			local v307, v308, v309 = ipairs(t6.value6)
+
+			while true do
+				local v310, v311 = v307(v308, v309)
+
+				if not v310 then
+					break
+				end
+
+				v309 = v310
+
+				local n19 = 0
+
+				while n19 ~= 0 do
+
+				end
+
+				v311.LayoutOrder = v310
+				v311.Parent = t6.value5
+			end
+
+			local v312, v313, v314 = ipairs(t6.value7)
+
+			while true do
+				local v315, v316 = v312(v313, v314)
+
+				if not v315 then
+					break
+				end
+
+				v314 = v315
+
+				local n20 = 0
+
+				while n20 ~= 0 do
+
+				end
+
+				v316.LayoutOrder = #t6.value6 + v315 + 1
+				v316.Parent = t6.value5
+			end
+
+			local value52 = t5.value5
+
+			if value52 then
+				value52 = t5.value8
+			end
+
+			if not value52 then
+				v340 = env.Z2vEXHZpgXHU
+
+				return
+			end
+
+			if t5.value12.EASY_TURN then
+				t5.value16(t5.value8)
+			else
+				t5.value19(t5.value8)
+			end
+
+			local Z2vEXHZpgXHU = env.Z2vEXHZpgXHU
+		end
+
+		TextButton.MouseButton1Click:Connect(v291)
+		t6.value2.MouseButton1Click:Connect(function()
+			while false do
+
+			end
+
+			if t5.value6 then
+				local _ = env.faZ7z9K0Tjzu
+			else
+				local Visible = t6.value4.Visible
+
+				t6.value4.Visible = not Visible
+
+				local _ = env.fY4tfXu6SPVyAc
+			end
+		end)
+
+		local _ = {
+			t5.value6,
+			t6.value3,
+			t6.value1,
+			t6.value2
+		}
+
+		local function v324(p38)
+			t5.value6 = p38
+			t6.value3.Text = p38 and "LOCKED" or "UN"
+			t6.value1.Active = not p38
+			t6.value2.Active = not p38
+			t6.value1.AutoButtonColor = not p38
+			t6.value2.AutoButtonColor = not p38
+			t6.value1.BackgroundTransparency = p38 and 0.5 or 0
+			t6.value2.BackgroundTransparency = p38 and 0.5 or 0
+		end
+
+		local MouseButton1Click = t6.value3.MouseButton1Click
+		local Connect = MouseButton1Click.Connect
+		local _ = { v324, t5.value6 }
+
+		Connect(MouseButton1Click, function()
+			v324(not t5.value6)
+		end)
+
+		return ScreenGui, t6.value1, t6.value2
+	end
+	local function v328(p39)
+		local n21 = 0
+		local v330 = nil
+		local v331 = nil
+		local v332 = nil
+
+		while true do
+			if n21 == 3 then
+				workspace.DescendantAdded:Connect(v330)
+				v331.InputBegan:Connect(function(input)
+					if t5.value6 then
+						return
+					end
+
+					if not ((input.UserInputType == Enum.UserInputType.Touch and true or input.UserInputType == Enum.UserInputType.MouseButton1) and t5.value8) then
+						v354 = env["4VmQQ5Y9NcGoEr"]
+
+						return
+					end
+
+					t5.value20(t5.value8)
+
+					local n4VmQQ5Y9NcGoEr = env["4VmQQ5Y9NcGoEr"]
+				end)
+				n21 = 4
+			end
+
+			if n21 == 0 then
+				local PlayerGui = t5.value4:WaitForChild("PlayerGui")
+
+				if PlayerGui:FindFirstChild("BoostGui") then
+					PlayerGui.BoostGui:Destroy()
+					n21 = 1
+				else
+					n21 = 1
+				end
+			end
+
+			if n21 == 1 then
+				local v335
+
+				v335, v331, v332 = v250()
+				n21 = 2
+				v330 = nil
+			end
+
+			if n21 == 4 then
+				v331.InputEnded:Connect(function(input)
+					if not (input.UserInputType == Enum.UserInputType.Touch and true or input.UserInputType == env.Enum.UserInputType.MouseButton1) then
+						return
+					end
+
+					v154()
+				end)
+
+				return
+			end
+
+			if n21 == 2 then
+				v330 = function(p40)
+					if not p40:IsA("VehicleSeat") then
+						return
+					end
+
+					p40:GetPropertyChangedSignal("Occupant"):Connect(function()
+						local n22 = 0
+
+						while n22 ~= 0 do
+
+						end
+
+						local Occupant = p40.Occupant
+
+						if Occupant then
+							Occupant = Occupant.Parent == p39
+						end
+
+						if Occupant then
+							local n23 = 0
+
+							while n23 ~= 2 do
+								local _ = n23 == 1
+
+								if n23 == 1 then
+									v332.Visible = true
+									lockBtn.Visible = true
+									n23 = 2
+								end
+
+								if n23 == 0 then
+									t5.value8 = p40
+									v331.Visible = true
+									n23 = 1
+								end
+							end
+
+							local v341 = not t5.value12.EASY_TURN
+
+							if v341 then
+							elseif v341 then
+								t5.value19(p40)
+
+								return
+							else
+								return
+							end
+
+							v341 = t5.value5
+
+							if v341 then
+								t5.value19(p40)
+
+								return
+							else
+								return
+							end
+						else
+							if t5.value8 ~= p40 then
+								return
+							end
+
+							t5.value16(p40)
+							t5.value8 = nil
+							v331.Visible = false
+							v332.Visible = false
+							lockBtn.Visible = false
+							v154()
+						end
+					end)
+				end
+
+				local v342, v343, v344 = ipairs(workspace:GetDescendants())
+
+				while true do
+					local v345
+
+					v344, v345 = v342(v343, v344)
+
+					if not v344 then
+						break
+					end
+
+					v330(v345)
+				end
+
+				n21 = 3
+			end
+		end
+	end
+
+	repeat
+		wait()
+		t4.value13 = t5.value4.Character
+	until t4.value13
+
+	v328(t5.value4.Character)
+	t5.value4.CharacterAdded:Connect(function(character)
+		while false do
+
+		end
+
+		repeat
+			wait()
+		until character:FindFirstChild("Humanoid")
+
+		v328(character)
+	end)
+	print("DDS VEHICLE BOOST SCRIPT ACTIVE")
+end
+
+-- KEYLESS PATCH: auth gate removed
+(function()
+	if getgenv().JunkieUILoaded then
+		return
+	end
+	getgenv().JunkieUILoaded = true
+	t2.value11()
+end)()
